@@ -3,7 +3,8 @@
     $_SESSION['mail'] = mysqli_real_escape_string($mysqli,$_POST['u_mail']);
     $u_mail = mysqli_real_escape_string($mysqli,$_POST['u_mail']);
     $u_password = mysqli_real_escape_string($mysqli,$_POST['u_password']);  
-    
+    $u_password2 = md5($u_password);
+
     $sql = "select * from customers where C_id= '$u_mail';";
     $result = mysqli_query($mysqli, $sql);
     
@@ -20,7 +21,7 @@
     {   
         if($row = mysqli_fetch_assoc($result)) 
         {
-            if ($u_password == $row['Password'])
+            if ($u_password2 == $row['Password'])
             {
                 $a = $row['C_id'];
                 $_SESSION['mail'] = $row['C_id'];
