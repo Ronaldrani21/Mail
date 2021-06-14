@@ -25,6 +25,8 @@
     
     $sql = "SELECT * FROM `theme` WHERE  `C_id`= '$mail';";
     $result=mysqli_query($mysqli, $sql);
+
+    global $theme;
     if (mysqli_num_rows($result) > 0)
     {
         if($row = mysqli_fetch_array($result))
@@ -34,7 +36,7 @@
     }
     $x = "background-image: url('../repository/img/";
     $x .= $theme;
-    $x .= ".jpg');";
+    $x .= "4.jpg');";
   
     if ($_SERVER['REQUEST_METHOD'] == 'POST') 
     {

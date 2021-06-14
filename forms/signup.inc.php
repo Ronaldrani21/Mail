@@ -7,8 +7,9 @@
 
     $u_first_name = mysqli_real_escape_string($mysqli,$_POST['u_first_name']);
     $u_last_name = mysqli_real_escape_string($mysqli,$_POST['u_last_name']);
-    $u_mail = mysqli_real_escape_string($mysqli,$_POST['u_mail'])."Elandmails.tk";
+    $u_mail = mysqli_real_escape_string($mysqli,$_POST['u_mail'])."@Elandmails.tk";
     $u_password = mysqli_real_escape_string($mysqli,$_POST['u_password']);
+    $u_password2 = md5($u_password);
     $u_repassword = mysqli_real_escape_string($mysqli,$_POST['u_repassword']);
                                    
 
@@ -39,7 +40,7 @@
             }
             else
             {
-                $sql = "INSERT INTO customers(`C_id`, `Fname`, `Lname`, `Password`) VALUES ('$u_mail', '$u_first_name', '$u_last_name', '$u_password')";
+                $sql = "INSERT INTO customers(`C_id`, `Fname`, `Lname`, `Password`) VALUES ('$u_mail', '$u_first_name', '$u_last_name', '$u_password2')";
                 if(mysqli_query($mysqli,$sql))
                 {
                     $a = $u_mail;
