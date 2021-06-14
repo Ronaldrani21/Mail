@@ -36,8 +36,9 @@
     }
     $x = "background-image: url('../repository/img/";
     $x .= $theme;
-    $x .= "4.jpg');";
-  
+
+    $x .= (mysqli_num_rows($result) < 1) ? "4.jpg');" : ".jpg');";
+
     if ($_SERVER['REQUEST_METHOD'] == 'POST') 
     {
         if (isset($_POST['submit'])) { 
