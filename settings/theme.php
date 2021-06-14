@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
                     <div class="theme-toolbar">
                         <div class="row">
                             <div class="col-sm-4">
-                                <input type="radio" id="1" name="gc_theme" value="">
+                                <input type="radio" id="1" name="gc_theme" value="1">
                                 <label for="1">
                                     <img src="../repository/img/1.jpg" class="img-fluid theme-image">
                                     <i class="far fa-check-circle"></i>
